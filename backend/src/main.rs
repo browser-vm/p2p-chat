@@ -106,7 +106,7 @@ async fn handle_socket(
     username: String,
     _token: String,
 ) {
-    let (mut sink, mut stream) = socket.split();
+    let (sink, mut stream) = socket.split();
     let client_id = Uuid::new_v4();
     let (tx, mut rx) = mpsc::channel(32);
 
